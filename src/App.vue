@@ -1,32 +1,40 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <SibarAdmin></SibarAdmin>
+    <SidebarAdmin2></SidebarAdmin2>
+    <Nav id="menuu"></Nav>
+    <router-view />
+    <Footer></Footer>
   </div>
 </template>
 
+<script>
+// import Headerr from '@/components/Headerr.vue'
+import Nav from "../src/components/Client/Nav";
+import Footer from "../src/components/Client/Footer";
+import SibarAdmin from "../src/components/Admin/SidebarAdmin";
+import SidebarAdmin2 from "../src/components/Admin/SidebarAdmin2";
+export default {
+  components: {
+    // Headerr
+      Nav,
+    Footer,
+    SibarAdmin,
+    SidebarAdmin2,
+  },
+};
+</script>
 <style>
+#menuu{
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
